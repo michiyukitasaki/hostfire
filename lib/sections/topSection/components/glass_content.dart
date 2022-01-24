@@ -29,14 +29,14 @@ class GlassContent extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Hello There!",
+                "Flutter Webで作りました!",
                 style: Theme.of(context)
                     .textTheme
                     .headline5
                     !.copyWith(color: Colors.white),
               ),
               Text(
-                "Robbie \nRutherford",
+                "おかねる \nMicel",
                 style: TextStyle(
                   fontSize: 100,
                   fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class GlassContent extends StatelessWidget {
                 ),
               ),
               Text(
-                "Creative Design Director",
+                "Flutterでモバイル・デスクトップ・\nWebアプリ開発をしてます",
                 style: Theme.of(context)
                     .textTheme
                     .headline5

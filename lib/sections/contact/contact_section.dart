@@ -4,6 +4,7 @@ import 'package:hostfire0123/components/section_title.dart';
 import 'package:hostfire0123/constants.dart';
 
 import 'components/socal_card.dart';
+import 'package:hostfire0123/sections/contact_form.dart';
 
 class ContactSection extends StatelessWidget {
   @override
@@ -153,8 +154,13 @@ class ContactForm extends StatelessWidget {
             child: FittedBox(
               child: DefaultButton(
                 imageSrc: "assets/images/contact_icon.png",
-                text: "Contact Me!",
-                press: () {},
+                text: "Contact Me to to!",
+                press: (){
+                  print('OK');
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => WebViewPage1()));
+                },
               ),
             ),
           )

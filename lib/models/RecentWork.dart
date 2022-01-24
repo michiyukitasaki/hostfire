@@ -9,26 +9,26 @@ class RecentWork {
 List<RecentWork> recentWorks = [
   RecentWork(
     id: 1,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
-    image: "assets/images/work_1.png",
+    title: "Pythonで統計処理・\nデータ分析をしています",
+    category: "データサイエンス",
+    image: "assets/images/python_img.png",
   ),
   RecentWork(
     id: 2,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
-    image: "assets/images/work_2.png",
+    title: "FlutterでIos・Androidアプリの開発をしています",
+    category: "モバイルアプリ開発",
+    image: "assets/images/flutter_img.png",
   ),
   RecentWork(
     id: 3,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
-    image: "assets/images/work_3.png",
+    title: "SQLでデータベースの設計をしています",
+    category: "データベース設計",
+    image: "assets/images/sql_img.png",
   ),
   RecentWork(
     id: 4,
-    title: "New & Fresh Looking Portfolio indeed at the end",
-    category: "Graphic Design",
-    image: "assets/images/work_4.png",
+    title: "HTML & CCSでWebページを作成しています",
+    category: "Webデザイン",
+    image: "assets/images/css_img.png",
   ),
 ];

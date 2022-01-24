@@ -22,7 +22,7 @@ class DefaultButton extends StatelessWidget {
       ),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
       color: Color(0xFFE8F0F9),
-      onPressed: (){},
+      onPressed: (){press;},
       child: Row(
         children: [
           Image.asset(imageSrc, height: 40),
