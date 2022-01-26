@@ -18,6 +18,7 @@ class ServiceCard extends StatefulWidget {
 class _ServiceCardState extends State<ServiceCard> {
   bool isHover = false;
   Duration duration = Duration(milliseconds: 200);
+
   @override
   Widget build(BuildContext context) {
     return InkWell(

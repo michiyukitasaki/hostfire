@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hostfire0123/sections/about/about_section.dart';
+import 'package:hostfire0123/sections/recent_work/datail_page/ditailpage.dart';
 import 'constants.dart';
 // import 'package:web_app/constants.dart';
 // import 'package:web_app/sections/about/about_section.dart';
@@ -29,6 +30,12 @@ class HomeScreen extends StatelessWidget {
             // FeedbackSection(),
             SizedBox(height: kDefaultPadding),
             ContactSection(),
+            ElevatedButton(onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DitailPage()),
+              );
+            }, child: Text('Detail'),)
             // This SizeBox just for demo
             // SizedBox(
             //   height: 500,

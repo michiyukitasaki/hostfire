@@ -5,6 +5,9 @@ import 'package:hostfire0123/constants.dart';
 
 import 'components/socal_card.dart';
 import 'package:hostfire0123/sections/contact_form.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 
 class ContactSection extends StatelessWidget {
   @override
@@ -87,9 +90,16 @@ class ContactBox extends StatelessWidget {
 }
 
 class ContactForm extends StatelessWidget {
-  const ContactForm({
-    Key? key,
-  }) : super(key: key);
+
+  final TextEditingController _nameTextEditingController = TextEditingController();
+  final TextEditingController _emailTextEditingController = TextEditingController();
+  final TextEditingController _budgedTextEditingController = TextEditingController();
+  final TextEditingController _projecttypeTextEditingController = TextEditingController();
+  final TextEditingController _descriptionTextEditingController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +111,7 @@ class ContactForm extends StatelessWidget {
           SizedBox(
             width: 470,
             child: TextFormField(
-              onChanged: (value) {},
+              controller: _nameTextEditingController,
               decoration: InputDecoration(
                 labelText: "Your Name",
                 hintText: "Enter Your Name",
@@ -111,7 +121,7 @@ class ContactForm extends StatelessWidget {
           SizedBox(
             width: 470,
             child: TextFormField(
-              onChanged: (value) {},
+              controller: _emailTextEditingController,
               decoration: InputDecoration(
                 labelText: "Email Address",
                 hintText: "Enter your email address",
@@ -121,20 +131,20 @@ class ContactForm extends StatelessWidget {
           SizedBox(
             width: 470,
             child: TextFormField(
-              onChanged: (value) {},
+            controller: _projecttypeTextEditingController,
               decoration: InputDecoration(
                 labelText: "Project Type",
-                hintText: "Select Project Type",
+                hintText: "Project Type",
               ),
             ),
           ),
           SizedBox(
             width: 470,
             child: TextFormField(
-              onChanged: (value) {},
+            controller: _budgedTextEditingController,
               decoration: InputDecoration(
                 labelText: "Project Budget",
-                hintText: "Select Project Budget",
+                hintText: "Project Budget",
               ),
             ),
           ),
@@ -142,7 +152,7 @@ class ContactForm extends StatelessWidget {
             // height: 300,
             // TextField by default cover the height, i tryed to fix this problem but i cant
             child: TextFormField(
-              onChanged: (value) {},
+            controller: _descriptionTextEditingController,
               decoration: InputDecoration(
                 labelText: "Description",
                 hintText: "Write some description",
@@ -156,6 +166,7 @@ class ContactForm extends StatelessWidget {
                 imageSrc: "assets/images/contact_icon.png",
                 text: "Contact Me to to!",
                 press: (){
+                  saveContactInfoToFireStore();
                   print('OK');
                   Navigator.push(
                       context,
@@ -168,4 +179,19 @@ class ContactForm extends StatelessWidget {
       ),
     );
   }
+
+
+  Future saveContactInfoToFireStore()async{
+    FirebaseAuth auth = FirebaseAuth.instance;
+    auth.signInAnonymously();
+    FirebaseFirestore.instance.collection('offers').add({
+      'email':_emailTextEditingController.text.trim(),
+      'name':_nameTextEditingController.text.trim(),
+      'description':_descriptionTextEditingController.text.trim(),
+      'project_type':_projecttypeTextEditingController.text.trim(),
+      'budged':_budgedTextEditingController.text.trim()
+    });
+
+  }
+
 }

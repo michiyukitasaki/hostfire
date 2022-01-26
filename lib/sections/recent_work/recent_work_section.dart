@@ -6,6 +6,8 @@ import 'package:hostfire0123/models/RecentWork.dart';
 import 'components/recent_work_card.dart';
 import 'package:hostfire0123/constants.dart';
 
+import 'datail_page/ditailpage.dart';
+
 
 
 class RecentWorkSection extends StatelessWidget {
@@ -42,7 +44,9 @@ class RecentWorkSection extends StatelessWidget {
               runSpacing: kDefaultPadding * 2,
               children: List.generate(
                 recentWorks.length,
-                (index) => RecentWorkCard(index: index, press: () {}),
+                (index) => RecentWorkCard(
+                    index: index,
+                    press:(){}),
               ),
             ),
           ),
@@ -52,3 +56,5 @@ class RecentWorkSection extends StatelessWidget {
     );
   }
 }
+
+
